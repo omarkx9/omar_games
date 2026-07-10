@@ -18,4 +18,4 @@ if lives == 0 and user_choice != computer_choice:
 elif user_choice >10 or user_choice < 0:
     print("Invaild choice..... \nplease Enter a number betwen (1 and 10) ")
 else:
-    print(f"💯Congraulition you won!\nYou guessed the number in {tries} tries")
+    print(f"💯Congraulition you won!\nYou guessed the number in {tries} tries\n\tthe number was ({computer_choice})")
