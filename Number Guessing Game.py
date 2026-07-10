@@ -1,21 +1,25 @@
 import random
 print("🎲-------Welcome to Guessing Game-------🎲")
-computer_choice = random.randint(1,10)
-user_choice = int(input("Enter a number betwen (1 and 10): "))
-lives = 6
-tries = 1
-while user_choice != computer_choice and lives > 0 and user_choice >=1 and user_choice <=10:
-    tries += 1
-    lives -= 1
-    print(f"you have {lives} more tries")
-    if user_choice > computer_choice:
-        print("⬇️  Too high! Try again ⬇️")
+computer_number = random.randint(1,10)
+tries = 0
+attempts = 5
+while True:
+    if attempts != 0:
+            tries += 1
+            print(f"you have {attempts} more tries")
+            user_number = int(input("Enter a number betwen (1 and 10): "))
+            if user_number < 11 and user_number > 0:
+                if user_number == computer_number:
+                    print(f"💯Congratulations you won!\nYou guess the number in {tries} treis\n\tthe nubmer was ({computer_number})")
+                    break
+                elif user_number > computer_number:
+                    print("⬇️  Too high! Try again ⬇️")
+                elif user_number < computer_number:
+                    print("⬆️  Too low! Try again ⬆️")
+                attempts -= 1
+            else:
+                print("Invaild choice..... Try again ")
+            continue
     else:
-        print("⬆️  Too low! Try again ⬆️")
-    user_choice = int(input("Enter a number betwen (1 and 10): "))
-if lives == 0 and user_choice != computer_choice:
-    print(f"Sorry you lose! the computer chose was {computer_choice}")
-elif user_choice >10 or user_choice < 0:
-    print("Invaild choice..... \nplease Enter a number betwen (1 and 10) ")
-else:
-    print(f"💯Congraulition you won!\nYou guessed the number in {tries} tries\n\tthe number was ({computer_choice})")
+        print(f"Sorry you lose! the computer chose was {computer_number}")
+        break
