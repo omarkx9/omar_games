@@ -19,7 +19,7 @@ while True:
                 attempts -= 1
             else:
                 print("Invaild choice..... Try again ")
-            continue
+                continue
     else:
         print(f"Sorry you lose! the computer chose was {computer_number}")
         break
