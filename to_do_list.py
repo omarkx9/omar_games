@@ -44,9 +44,9 @@ while True:
                         i += 1
                         print(i,".",x)
                 else:
-                    print("😐  😑")
+                    print("😐 Invalid Value......... 😑")
         else:
             print("👋 Good bye!")
             break
     else:
-        print("🙅‍♂️ Invalid Coice.........Try again")
+        print("🙅‍♂️ Invalid Choice.........Try again")
