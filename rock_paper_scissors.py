@@ -34,24 +34,24 @@ elif computer_choice == "paper":
     result = paper
 else:
     result = scissors
-user_choice = input("Please 🎮 Choose your move (Rock, Paper, or Scissors): ").lower()
-if user_choice in choices:
-    if user_choice == "rock":
+user_chose = input("Please 🎮 Choose your move (Rock, Paper, or Scissors): ").lower()
+if user_chose in choices:
+    if user_chose == "rock":
         option = rock
-    elif user_choice == "paper":
+    elif user_chose == "paper":
         option = paper 
     else:
         option = scissors
-    if user_choice == computer_choice:
+    if user_chose == computer_choice:
         print(f"\nIts a tie! you chose:\n{option}\ncomputer chose:\n{result}")
-    elif user_choice != computer_choice:
-        if user_choice == "rock" and computer_choice == "scissors":
+    elif user_chose != computer_choice:
+        if user_chose == "rock" and computer_choice == "scissors":
             win(user_option = option , computer_result = result)
-        elif user_choice == "paper" and computer_choice == "rock":
+        elif user_chose == "paper" and computer_choice == "rock":
             win(user_option = option , computer_result = result)
-        elif user_choice == "scissors" and computer_choice == "paper":
+        elif user_chose == "scissors" and computer_choice == "paper":
             win(user_option = option , computer_result = result)
         else:
             print(f"\n😅 You lost this round. Try again!\nyou chose:\n{option}\ncomputer chose:\n{result}")
 else:
-    print(f"{user_choice} is Invaild choice\nPlease Choose your move (Rock, Paper, or Scissors):")
+    print(f"{user_chose} is Invaild choice\nPlease Choose your move (Rock, Paper, or Scissors):")
