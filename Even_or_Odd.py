@@ -1,12 +1,12 @@
-# اطبع للمستخدم رساله ترحيب
+# print Welcome to user
 print("\n\t-------Welcome to Even or Odd-------")
-# اطلب من المستخدم اخال رقم وخزنه في متغير
+# ask user to enter a number and save the number in a varibale
 number = int(input('Enter a number: '))
-# تتحقق ما اذا كان الرقم زوجي
+# check if the number is Even
 if number % 2 == 0:
-    # اطبع للمستخدم رقمه و انه زوجي
+    # print to the user his number and the number is Even
     print(f"{number} is Even")
-# تحقق ما اذا كان الرقم فردي
+# check is the number is Odd
 else:
-    #اطبع للمستخدم رقمه وانه فردي
+    #print to the user his nubmer and the number is Odd
     print(f"{number} is Odd")
