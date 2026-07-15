@@ -5,8 +5,8 @@ number = int(input('Enter a number: '))
 # check if the number is Even
 if number % 2 == 0:
     # print to the user his number and the number is Even
-    print(f"{number} is Even")
+    print(f"{number} These number is Even")
 # check is the number is Odd
 else:
     #print to the user his nubmer and the number is Odd
-    print(f"{number} is Odd")
+    print(f"{number} These number is Odd")
