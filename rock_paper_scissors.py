@@ -1,6 +1,6 @@
 import random
 def win(user_option,computer_result):
-    print(f"🔥 Awesome! You beat the computer!\n you chose:\n{option}\ncomputer chose:\n{result}")
+    print(f"\n🔥 Awesome! You beat the computer!\n you chose:\n{option}\ncomputer chose:\n{result}")
 choices = ["rock","paper","scissors"]
 Number_of_Wins = 0
 rock = """ 
@@ -60,5 +60,5 @@ while True:
                 print(f"\n😅 You lost this round. Try again!\nyou chose:\n{option}\ncomputer chose:\n{result}")
                 break
     else:
-        print(f"{user_chose} is Invaild choice\nPlease Choose your move (Rock, Paper, or Scissors):")
+        print(f"Invaild choice....... ({user_chose}) is not the Right word. Try again.")
         continue
