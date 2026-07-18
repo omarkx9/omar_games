@@ -35,7 +35,7 @@ elif computer_choice == "paper":
 else:
     result = scissors
 while True:
-    user_chose = input("Please 🎮 Choose your move (Rock🪨 , Paper📄, Scissors ✂️ ): ").lower()
+    user_chose = input("Please 🎮 Choose your move ( Rock🪨 , Paper📄, Scissors ✂️ ): ").lower()
     if user_chose in choices:
         if user_chose == "rock":
             option = rock
