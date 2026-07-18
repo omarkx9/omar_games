@@ -35,7 +35,7 @@ elif computer_choice == "paper":
 else:
     result = scissors
 while True:
-    user_chose = input("Please 🎮 Choose your move (Rock, Paper, or Scissors): ").lower()
+    user_chose = input("Please 🎮 Choose your move (Rock🪨 , Paper📄, Scissors ✂️ ): ").lower()
     if user_chose in choices:
         if user_chose == "rock":
             option = rock
@@ -60,5 +60,5 @@ while True:
                 print(f"\n😅 You lost this round. Try again!\nyou chose:\n{option}\ncomputer chose:\n{result}")
                 break
     else:
-        print(f"Invaild choice....... ({user_chose}) is not the Right word. Try again.")
+        print(f"\n(Obss.Invaild choice....... ({user_chose}) is not the Right word. Try again.)\n")
         continue
