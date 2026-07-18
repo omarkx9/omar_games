@@ -57,7 +57,7 @@ while True:
                 win(user_option = option , computer_result = result)
                 break
             else:
-                print(f"\n😅 You lost this round. Try again!\nyou chose:\n{option}\ncomputer chose:\n{result}")
+                print(f"\nOhhh. 😅 You lost this round. Try again!\nyou chose:\n{option}\ncomputer chose:\n{result}")
                 break
     else:
         print(f"\n(Obss.Invaild choice....... ({user_chose}) is not the Right word. Try again.)\n")
