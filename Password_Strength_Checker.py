@@ -1,8 +1,5 @@
 import string
 print("\n\t-------Welcome to Password Strength Checker-------\n")
-lower = string.ascii_lowercase
-upper = string.ascii_uppercase
-numbers = string.digits
 punctuation = string.punctuation
 Rules = ["1️⃣  At least 8 characters long,","2️⃣  Has at least 1 uppercase letter,","3️⃣  Has at least 1 lowercase letter,","4️⃣  Has at least 1 number,","5️⃣  Has at least 1 spicial character"]
 rules = f"""
@@ -30,11 +27,11 @@ while True:
     number_count= 0
     spicial_count= 0
     for x in password:
-        if x in lower:
+        if x.islower():
             lower_count += 1 
-        elif x in upper:
+        elif x.isupper():
             upper_count += 1
-        elif x in numbers:
+        elif x.isdigit():
             number_count += 1
         elif x in punctuation:
             spicial_count += 1
