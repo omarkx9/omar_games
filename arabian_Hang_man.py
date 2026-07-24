@@ -57,7 +57,7 @@ arab_countries = [
     "tunisia",
     "algeria",
     "morocco",
-    "saudi_arabia",
+    "saudi-arabia",
     "yemen",
     "oman",
     "qatar",
@@ -87,12 +87,13 @@ while "_" in spaces and tries > 0:
     print(f"🔢 number of letters ({len(computer_choice)}) 🔢")
     print(f"🔄️ You have ({tries}) more tries 🔄️")
     print(f"({",".join(spaces)})")
+    print("👾 If there is space in the conutry (space = \" - \") 🛰️")
     letter_guess = input("🤷 Enter a letter to guess or type (stop) to exit 🤷: ").lower()
     if letter_guess.lower() == "stop":
         print("👋 Good bye 👋")
         break
     else:
-        if letter_guess in string.ascii_lowercase and len(letter_guess) == 1:
+        if letter_guess in string.ascii_lowercase or letter_guess == "-" and len(letter_guess) == 1:
             number = -1
             for i in computer_choice:
                 number += 1
@@ -131,4 +132,4 @@ else:
               *********************
     """)
     print(Hangmanpics[len(Hangmanpics)-tries])
-    print(f"🫡  The word was {computer_choice} 🫡")
+    print(f"\n              🫡  The word was {computer_choice} 🫡\n")
