@@ -1,5 +1,4 @@
 import random
-import string
 Hangmanpics = ['''
   +---+
       |
@@ -93,7 +92,7 @@ while "_" in spaces and tries > 0:
         print("👋 Good bye 👋")
         break
     else:
-        if letter_guess in string.ascii_lowercase or letter_guess == "-" and len(letter_guess) == 1:
+        if len(letter_guess) == 1 and letter_guess.isalpha() or letter_guess == "-" :
             number = -1
             for i in computer_choice:
                 number += 1
