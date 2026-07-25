@@ -77,21 +77,21 @@ elif stop.capitalize() == "Exit":
 else:
     print("HAHAHAHAHA LOSER")
 while True:
-    تقييم = int(input("Enter your Evaluation (1-5): "))
-    if str( تقييم).isdigit() :
-        if تقييم ==1:
+    Evaluation = input("Enter your Evaluation (1-5): ")
+    if Evaluation.isdigit() :
+        if int(Evaluation) ==1:
             print("😢😢😢🫨")
             break
-        elif تقييم ==2:
+        elif int(Evaluation) ==2:
             print("🤨🤔🤨🤔")
             break
-        elif تقييم ==3:
+        elif int(Evaluation) ==3:
             print("😐😐😐")
             break
-        elif تقييم ==4:
+        elif int(Evaluation) ==4:
             print("🫡 🫡 🫡")
             break
-        elif تقييم ==5:
+        elif int(Evaluation) ==5:
             print("\n😮😲🤩🤩🤩 Thanks.....\n")
             break
         else:
