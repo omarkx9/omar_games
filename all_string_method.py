@@ -1,3 +1,6 @@
+# ----------------------
+# ----STRING METHODS----
+# ----------------------
 # 1 string.capitalize()
 word = "oMar hASan iS tHE BeST"
 print(word.capitalize())
