@@ -77,7 +77,7 @@ while True:
                 print("👋 Goodbye! Thanks for playing! 🎮")
                 break
 
-        elif user_chose != computer_choice:
+        else:
 
             if user_chose == "rock" and computer_choice == "scissors":
                 Number_of_Wins += 1
