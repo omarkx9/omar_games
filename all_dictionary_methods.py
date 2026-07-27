@@ -2,10 +2,10 @@
 # -- DICTIONARY METHODS --
 # ------------------------
 
-def f():
+def separator():
     print("=" * 40)
 
-f()
+separator()
 
 # ========================================
 # 1. dict.get()
@@ -21,7 +21,7 @@ print(numbers.get("one"))
 # or
 print(numbers["one"])
 
-f()
+separator()
 
 # ========================================
 # 2. dict.keys()
@@ -34,7 +34,7 @@ names = {
 
 print(names.keys())
 
-f()
+separator()
 
 # ========================================
 # 3. dict.values()
@@ -47,7 +47,7 @@ names = {
 
 print(names.values())
 
-f()
+separator()
 
 # ========================================
 # 4. dict.clear()
@@ -61,7 +61,7 @@ names.clear()
 
 print(names)
 
-f()
+separator()
 
 # ========================================
 # 5. dict.update()
@@ -80,7 +80,7 @@ names["country"] = "Saudi Arabia"
 
 print(names)
 
-f()
+separator()
 
 # ========================================
 # 6. dict.copy()
@@ -104,7 +104,7 @@ numbers.update({"four": 4})
 print(numbers)
 print(number)
 
-f()
+separator()
 
 # ========================================
 # 7. dict.setdefault()
@@ -124,7 +124,7 @@ print(user.setdefault("age", 14))
 
 print(user)
 
-f()
+separator()
 
 # ========================================
 # 8. dict.popitem()
@@ -142,7 +142,7 @@ print(dictionary.popitem())
 
 print(dictionary)
 
-f()
+separator()
 
 # ========================================
 # 9. dict.items()
@@ -154,7 +154,7 @@ dictionary = {
 
 print(dictionary.items())
 
-f()
+separator()
 
 # ========================================
 # 10. dict.fromkeys()
@@ -165,7 +165,7 @@ grades = dict.fromkeys(students, 0)
 
 print(grades)
 
-f()
+separator()
 
 # ========================================
 # 11. dict.pop()
@@ -181,4 +181,4 @@ print(user.pop("omar"))
 
 print(user)
 
-f()
+separator()
