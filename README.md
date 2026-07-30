@@ -14,7 +14,7 @@ Some of the projects in this repository include:
 * ✊ **Rock Paper Scissors**
 * 🔢 **Number Guessing Game**
 * 🔐 **Password Strength Checker**
-* 📝 **To-Do List**
+* 📝 **Task-Manager**
 * 📱 **Contact Manager**
 * 🎂 **Age Calculator**
 * 🔢 **Even or Odd**

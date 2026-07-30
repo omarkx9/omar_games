@@ -67,11 +67,15 @@ while True:
                 else:
                     print("There Are Not Tasks To Delete")
             elif choice == 5:
+                yes_no = False
                 if empty(tasks):
                     search = input("Search: ").strip().title()
                     for x1,x2 in tasks.items():
                         if search in x2["task"]:
                             print(f"ID({x1}) {x2["task"]} {x2["status"]}")
+                            yes_no = True
+                    if yes_no == False:
+                        print("Not Found")
                 else:
                     print("There Are Not Tasks To Search...")
             elif choice == 6:
