@@ -14,7 +14,8 @@ all_tasks = """
                4. Delete Tasks
                5. Search Task
                6. Statistics
-               7. Exit
+               7. Remove All Tasks 
+               8. Exit
             {=============================}
 """
 i = 1
@@ -24,7 +25,7 @@ while True:
     choice = input("Chose Your Move: ").strip()
     if choice.isdigit():
         choice = int(choice)
-        if choice < 8 and choice > 0:
+        if choice < 9 and choice > 0:
             if choice == 1:
                 name_task = input("Enter The Task: ").strip().title()
                 tasks[str(i)] = {
@@ -44,7 +45,7 @@ while True:
                     show(**tasks)
                     task_done = input("Enter Wich Task Is Completed\nBy ID: ").strip().title()
                     if task_done in tasks:
-                        tasks[task_done]["status"] = "[completed]"
+                        tasks[task_done]["status"] = "[Completed]"
                     else:
                         if task_done.isdigit():
                             print(f"ID({task_done}) This ID Isn't In Your Tasks")
@@ -66,12 +67,32 @@ while True:
                 else:
                     print("There Are Not Tasks To Delete")
             elif choice == 5:
-                if empty(**tasks):
-                    pass
+                if empty(tasks):
+                    search = input("Search: ").strip().title()
+                    for x1,x2 in tasks.items():
+                        if search in x2["task"]:
+                            print(f"ID({x1}) {x2["task"]} {x2["status"]}")
                 else:
                     print("There Are Not Tasks To Search...")
             elif choice == 6:
-                pass
+                print(f"\nTotal Tasks ({len(tasks)}):")
+                n = 0
+                n2 = 0
+                for x,y in tasks.items():
+                    if y["status"] == "[Completed]":
+                        n += 1
+                    else:
+                        n2 += 1
+                print("Completed Tasks ({}):".format(n)) 
+                print("Pending Tasks ({}):".format(n2))
+                if n == 0 and len(tasks) == 0:
+                    print("Completeing Rate (0%)")
+                else: 
+                    print("Completeing Rate ({})".format((n/len(tasks))*100))
+            elif choice == 7:
+                time.sleep(2)
+                print("Now You Dont Have Any Tasks")
+                tasks.clear()
             else:
                 time.sleep(1)
                 print("Nice To See You Goodbye!")
@@ -80,3 +101,28 @@ while True:
             print("Invalid Choice... Please Enter Number Betwen(1,7)")
     else:
         print(f"Invalid Choice... {choice} Is Not Number")
+print("OKKKK Now Evalution Our Abb!!!")
+while True:
+    evalution = input("1 - 5: ").strip()
+    if evalution.isdigit():
+        evalution = int(evalution)
+        if evalution == 1:
+            print("👎👎🙅‍♂️🙅‍♀️🙅‍♂️")
+            break
+        elif evalution == 2:
+            print("🥺🥺🥺🥺🥺")
+            break
+        elif evalution == 3:
+            print("🤨🤔🤨🤔🤨🤔")
+            break
+        elif evalution == 4:
+            print("🫡🫡🫡🫡👍👌")
+            break
+        elif evalution == 5:
+            print("🤩🫨😮😲🤩🤩🤩🤩🤩")
+            break
+        else:
+            print("Invalid Choice Please Enter Number Betwen 1-5.......")
+    else:
+        print("NOOO Please Enter A Nubmer.......")
+print("="*34)
