@@ -134,7 +134,7 @@ dictionary = {
     "age": 34
 }
 
-dictionary["country"] = "Saudi Arabia"
+dictionary.setdefault("jop","ai engnieer")
 
 print(dictionary)
 

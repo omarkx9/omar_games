@@ -1,52 +1,82 @@
-print("\n\t 📑-------welcome to the To-Do List App!-------📑")
-tasks = []
+import time
+print("\n\t 📑-------Welcome Task Manager App!-------📑\n")
+def empty(x):
+    return bool(x)
+def show(**y):
+    for a,b in y.items():
+        print(f"ID({a}) {b["task"]} {b["status"]}")
+    print()
+all_tasks = """
+            {==========_Options_==========}
+               1. Add Task
+               2. Show Tasks
+               3. Complete Tasks
+               4. Delete Tasks
+               5. Search Task
+               6. Statistics
+               7. Exit
+            {=============================}
+"""
+i = 1
+tasks = {}
 while True:
-    print("""
-    _________________
-    Choose an option:
-    1. Add task
-    2. View tasks
-    3. Delete task
-    4. Exit
-    -----------------
-    """)
-    choice = int(input("Enter your choice (1-4): "))
-    if choice < 5 and choice > 0:
-        if choice == 1:
-            task = input("Enter the task: ")
-            tasks.append(task)
-            print(f"👌 Task ({task}) added!")
-        elif choice == 2:
-            if not tasks:
-                print("📪 No tasks Yet")
-            else:
-                i = 0
-                print("📃 Your tasks 📋:")
-                for x in tasks:
-                    i += 1
-                    print(i,".",x)
-        elif choice == 3:
-            if not tasks:
-                print("📪 No tasks Yet")
-            else:
-                i = 0
-                print("📃 Your tasks 📋:")
-                for x in tasks:
-                    i += 1
-                    print(i,".",x)
-                task_number = int(input("Enter task number to delet: "))
-                if task_number <= len(tasks) and task_number > 0:
-                    del_tasks = tasks.pop(task_number-1)
-                    print(f"🗑️ Deleted: {del_tasks}")
-                    i = 0
-                    print("📃 Your tasks 📋:")
-                    for x in tasks:
-                        i += 1
-                        print(i,".",x)
+    print(all_tasks)
+    choice = input("Chose Your Move: ").strip()
+    if choice.isdigit():
+        choice = int(choice)
+        if choice < 8 and choice > 0:
+            if choice == 1:
+                name_task = input("Enter The Task: ").strip().title()
+                tasks[str(i)] = {
+                    "task" : name_task,
+                    "status" : "[Pending]"
+                }
+                i += 1
+                time.sleep(1)
+                print(f"Task {name_task} Added! ")
+            elif choice == 2:
+                if empty(tasks):
+                    show(**tasks)
                 else:
-                    print("😐 Invalid Value......... 😑")
+                    print("\nSorry You Dont Have Any Tasks")
+            elif choice == 3:
+                if empty(tasks):
+                    show(**tasks)
+                    task_done = input("Enter Wich Task Is Completed\nBy ID: ").strip().title()
+                    if task_done in tasks:
+                        tasks[task_done]["status"] = "[completed]"
+                    else:
+                        if task_done.isdigit():
+                            print(f"ID({task_done}) This ID Isn't In Your Tasks")
+                        else:
+                            print(f"({task_done}) Isn't a Number??")
+                else:
+                    print("\nSorry You Dont Have Any Tasks")
+            elif choice == 4:
+                if empty(tasks):
+                    show(**tasks)
+                    num_of_del = input("Enter The Nubmer Of Task To Delete\nBy ID: ").strip()
+                    if num_of_del.isdigit():
+                        if num_of_del in tasks:
+                            tasks.pop(num_of_del)
+                        else:
+                            print(f"{num_of_del} Is Out Of The Range....")
+                    else:
+                        print(f"{num_of_del} That Isn't A Number....")
+                else:
+                    print("There Are Not Tasks To Delete")
+            elif choice == 5:
+                if empty(**tasks):
+                    pass
+                else:
+                    print("There Are Not Tasks To Search...")
+            elif choice == 6:
+                pass
+            else:
+                time.sleep(1)
+                print("Nice To See You Goodbye!")
+                break
         else:
-            print("👋 Good bye!")
-            break
+            print("Invalid Choice... Please Enter Number Betwen(1,7)")
     else:
-        print("🙅‍♂️ Invalid Choice.........Try again")
+        print(f"Invalid Choice... {choice} Is Not Number")
