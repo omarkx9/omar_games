@@ -39,7 +39,7 @@ Some of the projects in this repository include:
 
 ## 🎯 My Goal
 
-My goal is to become a **Generative AI Engineer** 🤖🧠 and build a strong foundation in Python and software development.
+My goal is to become a **Senior Generative AI Engineer** 🤖🧠 and build a strong foundation in Python and software development.
 
 I’m continuously learning, building projects, fixing bugs, and improving my programming skills. 📈🔥
 
