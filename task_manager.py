@@ -1,5 +1,5 @@
 import time
-
+import os
 print("\n\t 📑🔥-------Welcome To Task Manager App!-------🔥📑\n")
 
 def empty(x):
@@ -9,6 +9,12 @@ def show(**y):
     for a, b in y.items():
         print(f"🆔 ID({a}) 📌 {b['task']} 📊 {b['status']} 🔥")
     print()
+
+def clear():
+    if os.name == "nt":
+        os.system("cls")
+    else:
+        os.system("clear")
 
 all_tasks = """
             {==========_Options_==========} 📋🔥
@@ -27,9 +33,10 @@ i = 1
 tasks = {}
 
 while True:
+    clear()
+    print(os.name)
     print(all_tasks)
     choice = input("🎮🔥 Choose Your Move: ").strip()
-
     if choice.isdigit():
         choice = int(choice)
 
@@ -167,9 +174,6 @@ while True:
 
             else:
                 time.sleep(1)
-                print(
-                    "👋😎🔥 Nice To See You! Goodbye! 🚀🐍💻"
-                )
                 break
 
         else:
@@ -183,9 +187,11 @@ while True:
             f"❌🔥 Invalid Choice... "
             f"{choice} Is Not A Number 🤨🤔"
         )
+    if choice != 8:
+        input("🔥 press Enter to continue: ")
 
+clear()
 print("🔥🔥🔥 OKKKK Now Evaluate Our App!!! 🚀🐍💻")
-
 while True:
     evalution = input("⭐🔥 1 - 5: ").strip()
 
@@ -226,3 +232,4 @@ while True:
         print("❌💀 NOOO! Please Enter A Number....... 🤣🔥")
 
 print("=" * 34)
+print("👋😎🔥 Nice To See You! Goodbye! 🚀🐍💻")
