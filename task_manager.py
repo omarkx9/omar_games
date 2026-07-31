@@ -90,11 +90,12 @@ while True:
                     if num_of_del.isdigit():
 
                         if num_of_del in tasks:
-                            tasks.pop(num_of_del)
+
                             print(
-                                f"🗑️💥 Task ID({num_of_del}) "
-                                f"Deleted Successfully! 🔥🎉"
-                            )
+                            f"🗑️💥 Task {tasks[num_of_del]["task"]} "
+                            f"Deleted Successfully! 🔥🎉"
+                        )
+                            tasks.pop(num_of_del)
 
                         else:
                             print(
