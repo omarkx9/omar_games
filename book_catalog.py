@@ -94,36 +94,41 @@ while True:
                 if books:
                     while True:
                         clear()
-                        check_isbn = input("📥📖 Enter ISBN to check in: ").strip()
+                        check_isbn = input("📥📖 Enter ISBN to check in or (Enter) To Consle: ").strip()
+                        if check_isbn:
+                            if check_isbn in books:
+                                if books[check_isbn]["available"] == False:
+                                    books[check_isbn]["available"] = True
 
-                        if check_isbn in books:
-                            books[check_isbn]["available"] = True
-
-                            print(f"✅📚 Book '{books[check_isbn]["title"]}' Checked in successfully. ")
-                            co()
-
-                            while True:
-                                clear()
-                                again = input("📥📚 Do you want to check in another book? (y/n): ").strip().lower()
-
-                                if again == "y":
-                                    break
-
-                                elif again == "n":
-                                    break
-
-                                else:
-                                    print("❌⚠️ Invalid choice. Please Enter (Y/N)")
+                                    print(f"✅📚 Book '{books[check_isbn]["title"]}' Checked in successfully. ")
                                     co()
 
-                            if again == "n":
-                                break
+                                    while True:
+                                        clear()
+                                        again = input("📥📚 Do you want to check in another book? (y/n): ").strip().lower()
 
-                            continue
+                                        if again == "y":
+                                            break
 
+                                        elif again == "n":
+                                            break
+
+                                        else:
+                                            print("❌⚠️ Invalid choice. Please Enter (Y/N)")
+                                            co()
+
+                                    if again == "n":
+                                        break
+
+                                    continue
+                                else:
+                                    print("😑😑That's Book Is Already Out😐😐")
+                                    co()
+                            else:
+                                print(f"❌🔎 {check_isbn} NOT Found!!!!!!")
+                                co()
                         else:
-                            print(f"❌🔎 {check_isbn} NOT Found!!!!!!")
-                            co()
+                            break
                 else:
                     print("📭😱 You Don't Have Any Books????.....")
                     co()
@@ -132,37 +137,42 @@ while True:
                 if books:
                     while True:
                         clear()
-                        check_isbn = input("📤📖 Enter ISBN to check out: ").strip()
+                        check_isbn = input("📤📖 Enter ISBN to check out or (Enter) To Consle: ").strip()
+                        if check_isbn:
+                            if check_isbn in books:
+                                if books[check_isbn]["available"] == True:
+                                    books[check_isbn]["available"] = False
 
-                        if check_isbn in books:
-                            books[check_isbn]["available"] = False
-
-                            print(f"✅📚 Book '{books[check_isbn]["title"]}' Checked out successfully. ")
-                            co()
-
-                            while True:
-                                clear()
-                                again = input("📤📚 Do you want to check out another book? (y/n): ").strip().lower()
-
-                                if again == "y":
-                                    break
-
-                                elif again == "n":
-                                    break
-
-                                else:
-                                    print("❌⚠️ Invalid choice. Please Enter (Y/N)")
+                                    print(f"✅📚 Book '{books[check_isbn]["title"]}' Checked out successfully. ")
                                     co()
 
-                            if again == "n":
-                                break
+                                    while True:
+                                        clear()
+                                        again = input("📤📚 Do you want to check out another book? (y/n): ").strip().lower()
 
-                            continue
+                                        if again == "y":
+                                            break
 
+                                        elif again == "n":
+                                            break
+
+                                        else:
+                                            print("❌⚠️ Invalid choice. Please Enter (Y/N)")
+                                            co()
+
+                                    if again == "n":
+                                        break
+
+                                    continue
+                                else:
+                                    print("😑😑That's Book Is Already Out😐😐")
+                                    co()
+
+                            else:
+                                print(f"❌🔎 {check_isbn} NOT Found!!!!!!")
+                                co()
                         else:
-                            print(f"❌🔎 {check_isbn} NOT Found!!!!!!")
-                            co()
-
+                            break
                 else:
                     print("📭😱 You Don't Have Any Books????.....")
                     co()
