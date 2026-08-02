@@ -86,6 +86,7 @@ while True:
 
                     if confirm == "y":
                         while True:
+                            clear()
                             convert_to = input(
                                 "💱 Choose a Currency to Convert to: "
                             ).strip().upper()
@@ -123,40 +124,36 @@ while True:
 
                                 print(
                                     f"💱 Exchange Rate: 1 {user_coin} = "
-                                    f"{number_of_coin_to / number_of_coin:.2f} {convert_to}"
+                                    f"{round(number_of_coin_to / number_of_coin,2)} {convert_to}"
                                 )
 
                                 print(
                                     f"💰 {amount} {user_coin} is equal to "
-                                    f"{exchange_rate:.2f} {convert_to}"
+                                    f"{round(exchange_rate,2)} {convert_to}"
                                 )
 
                                 accept = input(
-                                    "✅ Do you accept this transaction? (Y/N): "
+                                    f"✅ Do you Want to convert another currency from {user_coin}? (Y/N): "
                                 ).strip().lower()
 
                                 if accept == "y":
-                                    print("✅ Transaction Successfully Completed!")
+                                    continue
 
                                 else:
-                                    print("❌ Transaction Canceled.")
+                                    print("❌ Canceled.")
                                     print()
 
                                     anohter = input(
                                         "🔄 Do you want to perform another conversion? (Y/N): "
                                     ).strip().lower()
 
-                                    if anohter == "y":
-                                        break
-                                    else:
-                                        break
+                                    break
 
                             else:
                                 print(
                                     "❌ Invalid Choice... just (USD, SAR, EGP, SDG)"
                                 )
                                 c()
-
                         break
 
                     else:
@@ -179,7 +176,3 @@ while True:
         print("❌ Please Enter Letters")
         c()
 
-    if anohter != "y":
-        break
-    else:
-        continue
