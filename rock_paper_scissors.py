@@ -1,12 +1,18 @@
 import random
+import os
+def clear():
+    os.system("cls" if os.name == "nt" else "clear")
 
 def win(user, computer):
+    clear()
     print(f"\n🏆🔥 Awesome! You beat the computer! 🎉🎊\n\n🫵 You chose:\n{user}\n\n🤖 Computer chose:\n{computer}")
 
 def again(user):
     return bool(user)
 
 def point(wins, lose, tie):
+    input("📡____P-R-E-S-S--E-N-T-E-R____📡 ")
+    clear()
     print(f"\n📊 Scoreboard 📊")
     print(f"🏆 Your number of wins: ({wins})")
     print(f"❌ Your number of losses: ({lose})")
@@ -46,6 +52,7 @@ scissors = """
 """
 
 while True:
+    clear()
     computer_choice = random.choice(choices)
 
     if computer_choice == "rock":
@@ -68,12 +75,15 @@ while True:
 
         if user_chose == computer_choice:
             Number_of_Tie += 1
+            clear()
             print(f"\n🤝 It's a tie! 😄\n\n🫵  You chose:\n{option}\n\n🤖 Computer chose:\n{result}")
             point(Number_of_Wins, Number_of_Lose, Number_of_Tie)
+            print()
 
             if again(user=input("🔄 Do you want to play again? (Type anything or press Enter to quit): ").strip().lower()):
                 continue
             else:
+                clear()
                 print("👋 Goodbye! Thanks for playing! 🎮")
                 break
 
@@ -87,6 +97,7 @@ while True:
                 if again(user=input("🔄 Do you want to play again? (Type anything or press Enter to quit): ").strip().lower()):
                     continue
                 else:
+                    clear()
                     print("👋 Goodbye! Thanks for playing! 🎮")
                     break
 
@@ -98,6 +109,7 @@ while True:
                 if again(user=input("🔄 Do you want to play again? (Type anything or press Enter to quit): ").strip().lower()):
                     continue
                 else:
+                    clear()
                     print("👋 Goodbye! Thanks for playing! 🎮")
                     break
 
@@ -109,6 +121,7 @@ while True:
                 if again(user=input("🔄 Do you want to play again? (Type anything or press Enter to quit): ").strip().lower()):
                     continue
                 else:
+                    clear()
                     print("👋 Goodbye! Thanks for playing! 🎮")
                     break
 
@@ -120,9 +133,11 @@ while True:
                 if again(user=input("🔄 Do you want to play again? (Type anything or press Enter to quit): ").strip().lower()):
                     continue
                 else:
+                    clear()
                     print("👋 Goodbye! Thanks for playing! 🎮")
                     break
 
     else:
         print(f"\n🚫 Oops! Invalid choice. ❌\n📝 '{user_chose}' is not a valid option.\n🎮 Please try again! 😊\n")
+        input("📡____P-R-E-S-S--E-N-T-E-R____📡 ")
         continue
