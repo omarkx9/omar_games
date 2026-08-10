@@ -17,7 +17,7 @@ while True:
 
     if user_choice.lower() in words:
 
-        sam.color("light green")
+        sam.color("black","white")
         sam.penup()
         sam.pensize(5)
         sam.goto(480,500)
@@ -54,7 +54,7 @@ while True:
                 turtle2.forward(random.randint(1,8))
                 
                 turtle3.forward(random.randint(1,8))
-                
+
                 if turtle3.xcor() >= 480:
                     return ("red","احمر","أحمر")
                 elif turtle2.xcor() >= 480:
@@ -62,28 +62,33 @@ while True:
                 elif turtle1.xcor() >= 480:
                     return ("green","اخضر", "أخضر")
 
+        def win(user_choice,result):
+            if user_choice.lower() in result:
+                window.bgcolor("green")
+                x = Turtle("turtle")
+                x.hideturtle()
+                x.penup()
+                x.color("white")
+                x.write("You Win! 🎉🏆",align="center",font=("arial",80,"bold"))
+            else:
+                window.bgcolor("red")
+                x = Turtle("turtle")
+                x.hideturtle()
+                x.penup()
+                x.color("white")
+                x.write(f"You Lose! 😢\n{result[0]} Wins! 🏆",align="center",font=("arial",80,"bold"))
+    
+            time.sleep(3)
+            
+
         result = race(sam,tom,omar)
 
+        win(user_choice,result)
+        
         window.clear()
-
-        if user_choice.lower() in result:
-            window.bgcolor("green")
-            x = Turtle("turtle")
-            x.hideturtle()
-            x.penup()
-            x.color("white")
-            x.write("You Win! 🎉🏆",align="center",font=("arial",80,"bold"))
-        else:
-            window.bgcolor("red")
-            x = Turtle("turtle")
-            x.hideturtle()
-            x.penup()
-            x.color("white")
-            x.write(f"You Lose! 😢\n{result[0]} Wins! 🏆",align="center",font=("arial",80,"bold"))
-
-        time.sleep(3)
         break
 
+        
     else:
         window.clear()
         window.bgcolor("gray")
