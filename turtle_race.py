@@ -3,7 +3,7 @@ import random
 import time
 
 window = Screen()
-window.title("Omar Turtle Rice 🐢🏁")
+window.title("Omar Turtle Race 🐢🏁")
 window.setup(800,400)
 
 
@@ -52,7 +52,7 @@ while True:
             else:
                 return word
 
-        def rice():
+        def race():
             game_on = True
             while game_on:
                 for x in turtles:
@@ -63,7 +63,7 @@ while True:
                     else:
                         x.forward(random.randint(1,5))
 
-        def display_result(user,wineer):
+        def display_result(user,winner):
             window.clear()
             window.bgcolor("red")
             result = Turtle()
@@ -74,11 +74,11 @@ while True:
                 window.bgcolor("green")
                 result.write(f"You Chose {turn_to_english(user_choice)}\nYou Win😎",align="center",font=("arial",20))
             else:
-                result.write(f"You Chose {turn_to_english(user_choice)}\nYou Lose😑\nThe Winner Was {wineer}",align="center",font=("arial",20))
+                result.write(f"You Chose {turn_to_english(user_choice)}\nYou Lose😑\nThe Winner Was {winner}",align="center",font=("arial",20))
             time.sleep(3)
 
 
-        rice()
+        race()
 
         sam = Turtle()
         window.clear()
