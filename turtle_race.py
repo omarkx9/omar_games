@@ -59,6 +59,7 @@ while True:
                     if x.xcor() >= 280:
                         game_on = False
                         display_result(turn_to_english(user_choice) == x.color()[0],turn_to_english(x.color()[0]))
+                        break
                     else:
                         x.forward(random.randint(1,5))
 
@@ -74,7 +75,7 @@ while True:
                 result.write(f"You Chose {turn_to_english(user_choice)}\nYou Win😎",align="center",font=("arial",20))
             else:
                 result.write(f"You Chose {turn_to_english(user_choice)}\nYou Lose😑\nThe Wineer Was {wineer}",align="center",font=("arial",20))
-            time.sleep(5)
+            time.sleep(3)
 
 
         rice()
