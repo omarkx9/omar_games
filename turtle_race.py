@@ -52,7 +52,7 @@ while True:
             else:
                 return word
 
-        def rice():
+        def race():
             game_on = True
             while game_on:
                 for x in turtles:
@@ -74,7 +74,7 @@ while True:
                 window.bgcolor("green")
                 result.write(f"You Chose {turn_to_english(user_choice)}\nYou Win😎",align="center",font=("arial",20))
             else:
-                result.write(f"You Chose {turn_to_english(user_choice)}\nYou Lose😑\nThe Wineer Was {wineer}",align="center",font=("arial",20))
+                result.write(f"You Chose {turn_to_english(user_choice)}\nYou Lose😑\nThe Winner Was {wineer}",align="center",font=("arial",20))
             time.sleep(3)
 
 
