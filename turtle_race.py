@@ -3,7 +3,7 @@ import random
 import time
 
 window = Screen()
-window.title("Omar Turtle Race 🐢🏁")
+window.title("Omar Turtle Rice 🐢🏁")
 window.setup(800,400)
 
 
@@ -52,7 +52,7 @@ while True:
             else:
                 return word
 
-        def race():
+        def rice():
             game_on = True
             while game_on:
                 for x in turtles:
