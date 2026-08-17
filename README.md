@@ -10,6 +10,7 @@ I use these projects to practice **Python fundamentals, problem-solving, logic, 
 
 Some of the projects in this repository include:
 
+* 🐍 **Snake Game**
 * 🐢 **Turtle Race**
 * 🔒 **Caesar Cupher**
 * ♠️ **Black Jack**
