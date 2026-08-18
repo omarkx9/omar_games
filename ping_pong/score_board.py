@@ -5,12 +5,15 @@ class Score(Turtle):
         super().__init__()
         self.hideturtle()
         self.penup()
-        self.color("white")
+        self.color("orange")
         self.score = 0
         self.goto(x,y)
-        self.write(self.score, align= "center", font= ("arial",40,"bold"))
 
     def update_score(self):
         self.score += 1
+
+    def update_display(self):
         self.clear()
-        self.write(self.score, align= "center", font= ("arial",40,"bold"))
+        self.write(self.score, align= "center", font= ("courier",40,"bold"))
+
+    
