@@ -24,22 +24,28 @@ class Snake:
         new_segment.goto(self.turtels[0].pos())
         self.turtels.insert(0,new_segment)
 
-    def move(self,number_of_move=20):
+    def move(self):
         for x in range(len(self.turtels)-1):
             self.turtels[x].goto(self.turtels[x+1].pos())
-        self.head.forward(number_of_move)
+        self.head.forward(20)
 
     def up(self):
-        self.head.setheading(90)
-
+        if self.head.heading() != 270:
+            self.head.setheading(90)
+        
     def down(self):
-        self.head.setheading(270)
-
+        if self.head.heading() != 90:
+            self.head.setheading(270)
+    
     def left(self):
-        self.head.setheading(180)
+        if self.head.heading() != 0:
+            self.head.setheading(180)
+            
 
     def right(self):
-        self.head.setheading(0)
+        if self.head.heading() != 180:
+            self.head.setheading(0)
+            
 
     def head_pos(self):
         return self.head.pos()

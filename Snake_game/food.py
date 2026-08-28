@@ -11,6 +11,6 @@ class Food(Turtle):
         self.shapesize(0.5,0.5)
 
     def appear(self):
-        self.goto(random.randint(-380,380),random.randint(-380,380))
+        self.goto(random.randint(-370,370),random.randint(-370,370))
     def food_pos(self):
         return self.pos()
