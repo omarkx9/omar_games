@@ -1,4 +1,5 @@
 from turtle import Turtle
+import time
 
 class Score_Board(Turtle):
     def __init__(self, shape = "classic", undobuffersize = 1000, visible = True):
@@ -6,8 +7,9 @@ class Score_Board(Turtle):
         self.color("gold")
         self.hideturtle()
         self.penup()
-        self.goto(0,350)
+        self.goto(0,450)
         self.score = 0
+        self.old_highscore = self.get_high_score()
         self.highscore = self.get_high_score()
 
     def get_high_score(self):
@@ -17,28 +19,35 @@ class Score_Board(Turtle):
     def save_high_score(self):
         if self.score > self.highscore:
             self.highscore = self.score
+
         with open("high_score.txt","w") as file:
             file.write(str(self.highscore))
 
     def display(self):
         self.clear()
         self.save_high_score()
-        self.write(f"Score: {self.score}    High Score: {self.highscore}", align = "center", font= ("arial",15))
+        self.write(f"Score: {self.score}    High Score: {self.highscore}", align = "center", font= ("arial",20))
 
     def game_over(self):
         self.screen.clear()
-        self.screen.bgcolor("dark red")
         self.goto(0,0)
-        self.color("tomato")
+        self.color("#00E5FF")
         self.save_high_score()
-        if self.score < self.highscore:
-            self.write(f"-(ㆆ_ㆆ)- Game Over -(ㆆ_ㆆ)-\n\n    Your Score: {self.score}\n\n  Your High Score: {self.highscore}", align= "center", font=("arial",40,"bold"))
 
-        elif self.score == self.highscore:
-            self.write(f"-(ㆆ_ㆆ)- You Get The Same Score -(ㆆ_ㆆ)-\n\n    Your Score: {self.score}\n\n  Your High Score: {self.highscore}", align= "center", font=("arial",40,"bold"))
+        if self.score < self.old_highscore:
+            self.screen.setup(1536,1024)
+            self.screen.bgpic("all_pictures/game_over.gif")
+            self.write(f"    Your Score: {self.score}\n\n  Your High Score: {self.highscore}", align= "center", font=("arial",70,"bold"))
+
+        elif self.score == self.old_highscore:
+            self.screen.setup(1672,941)
+            self.screen.bgpic("all_pictures/draw.gif")
+            self.write(f"    Your Score: {self.score}\n\n  Your High Score: {self.highscore}", align= "center", font=("arial",70,"bold"))
 
         else:
-            self.write(f"-(❁´◡`❁)- Congratulations -(❁´◡`❁)- \n         !You Beat Your High Score!\n\n            Your New High Score: {self.highscore}", align= "center", font=("arial",20,"normal"))
+            self.screen.setup(1672,941)
+            self.screen.bgpic("all_pictures/win.gif")
+            self.write(f"      !You Beat Your High Score!\n\n         Your New High Score: {self.highscore}", align= "center", font=("arial",50,"normal"))
 
     def exit(self):
         self.screen.clear()

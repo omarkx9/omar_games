@@ -10,15 +10,23 @@ from score_bord import Score_Board
 import time
 
 window = Screen()
-window.setup(800,800)
 window.title("Snake Game")
-window.getcanvas().winfo_toplevel().resizable(False, False)
+
+window.setup(1536,1024)
+window.bgpic("all_pictures/start_menu.gif")
+continues = window.textinput("continue","press enter to continue".title())
+
+if not continues:
+    time.sleep(5)
+elif continues.lower() == "fast":
+    time.sleep(0.1)
+else:
+    time.sleep(2)
 
 y = Turtle()
 y.hideturtle()
 y.penup()
 y.color("gold")
-
 def exit():
     global game_on
     game_on =  False
@@ -28,6 +36,7 @@ def not_complete():
     complete = False
 
 complete = True
+speed = 0.1
 
 while complete:
     window.onkey(not_complete,"q")
@@ -46,9 +55,10 @@ while complete:
 
     game_on = True
     while game_on:
-        window.bgcolor("dark gray")
+        window.setup(1200,1000)
+        window.bgpic("all_pictures/Snake_game_back_ground.gif")
         score.display()
-        y.goto(0,320)
+        y.goto(0,430)
         y.write(f"..Press (Q) To Exit..", align = "center", font= ("arial",13))
         snake.move()
         window.onkey(snake.up,"Up")
@@ -57,12 +67,27 @@ while complete:
         window.onkey(snake.left,"Left")
         window.onkey(exit,"q")
         window.update()
-        time.sleep(0.1)
+        time.sleep(speed)
         if snake.head.distance(apple.food_pos())<15:
+            if apple.food_shape == "triangle":
+                score.score += 3
+                snake.extend()
+                snake.extend()
+                snake.extend()
+                speed -= 0.007
+            elif apple.food_shape == "circle":
+                score.score += 1
+                snake.extend()
+            elif apple.food_shape == "square":
+                score.score += 5
+                snake.extend()
+                snake.extend()
+                snake.extend()
+                snake.extend()
+                snake.extend()
+
             apple.appear()
-            snake.extend()
-            score.score += 1
-        if snake.head.xcor() > 370 or snake.head.ycor() > 370 or snake.head.xcor() < -370 or snake.head.ycor() < -370:
+        if snake.head.xcor() > 580 or snake.head.ycor() > 480 or snake.head.xcor() < -580 or snake.head.ycor() < -480:
             score.game_over()
             time.sleep(2)
             game_on = False
@@ -76,14 +101,14 @@ while complete:
     if play_again and play_again.lower() in ["y","yes","نعم"]:
         time.sleep(1)
         continue
-    else:
+    else: 
         writer = Turtle()
         window.clear()
+        window.setup(1672,941)
         writer.hideturtle()
         writer.color("gold")
-        window.bgcolor("salmon")
+        window.bgpic("all_pictures/goodbye.gif")
         writer.goto(0,0)
-        writer.write("GoodBye",align= "center",font=("arial",30,"bold"))
         time.sleep(3)
         break
         
