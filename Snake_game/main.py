@@ -13,12 +13,12 @@ window = Screen()
 window.title("Snake Game")
 
 window.setup(1536,1024)
-window.bgpic("all_pictures/start_menu.gif")
+window.bgpic("all_pictures/start_menu.png")
 continues = window.textinput("continue","press enter to continue".title())
 
 if not continues:
     time.sleep(5)
-elif continues.lower() == "fast":
+elif continues.lower() == "fast" or continues.lower() == "high score zero":
     time.sleep(0.1)
 else:
     time.sleep(2)
@@ -38,25 +38,30 @@ def not_complete():
 complete = True
 speed = 0.1
 
+window.onkey(not_complete,"q")
+window.listen()
+
+game_on = True
+
+
 while complete:
-    window.onkey(not_complete,"q")
     window.clear()
-    window.listen()
-
     window.tracer(0)
-
     snake = Snake()
     snake.creat_snake()
 
     score = Score_Board()
-
+    if continues == "high score zero":
+            score.highscore = 0
+            continues = "END"
+            with open("high_score.txt","w") as f:
+                f.write("0")
+            score.old_highscore = 0
     apple = Food()
     apple.appear()
-
-    game_on = True
     while game_on:
         window.setup(1200,1000)
-        window.bgpic("all_pictures/Snake_game_back_ground.gif")
+        window.bgpic("all_pictures/Snake_game_back_ground.png")
         score.display()
         y.goto(0,430)
         y.write(f"..Press (Q) To Exit..", align = "center", font= ("arial",13))
@@ -100,6 +105,7 @@ while complete:
     play_again = window.textinput("Play Again","Do You Want To Play Again?")
     if play_again and play_again.lower() in ["y","yes","نعم"]:
         time.sleep(1)
+        speed = 0.1
         continue
     else: 
         writer = Turtle()
@@ -107,7 +113,7 @@ while complete:
         window.setup(1672,941)
         writer.hideturtle()
         writer.color("gold")
-        window.bgpic("all_pictures/goodbye.gif")
+        window.bgpic("all_pictures/goodbye.png")
         writer.goto(0,0)
         time.sleep(3)
         break

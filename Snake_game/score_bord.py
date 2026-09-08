@@ -36,17 +36,17 @@ class Score_Board(Turtle):
 
         if self.score < self.old_highscore:
             self.screen.setup(1536,1024)
-            self.screen.bgpic("all_pictures/game_over.gif")
+            self.screen.bgpic("all_pictures/game_over.png")
             self.write(f"    Your Score: {self.score}\n\n  Your High Score: {self.highscore}", align= "center", font=("arial",70,"bold"))
 
         elif self.score == self.old_highscore:
             self.screen.setup(1672,941)
-            self.screen.bgpic("all_pictures/draw.gif")
+            self.screen.bgpic("all_pictures/draw.png")
             self.write(f"    Your Score: {self.score}\n\n  Your High Score: {self.highscore}", align= "center", font=("arial",70,"bold"))
 
         else:
             self.screen.setup(1672,941)
-            self.screen.bgpic("all_pictures/win.gif")
+            self.screen.bgpic("all_pictures/win.png")
             self.write(f"      !You Beat Your High Score!\n\n         Your New High Score: {self.highscore}", align= "center", font=("arial",50,"normal"))
 
     def exit(self):
