@@ -38,14 +38,13 @@ def not_complete():
 complete = True
 speed = 0.1
 
-window.onkey(not_complete,"q")
-window.listen()
-
 game_on = True
 
 
 while complete:
     window.clear()
+    window.listen()
+    window.onkey(not_complete,"q")
     window.tracer(0)
     snake = Snake()
     snake.creat_snake()
@@ -106,6 +105,7 @@ while complete:
     if play_again and play_again.lower() in ["y","yes","نعم"]:
         time.sleep(1)
         speed = 0.1
+        game_on = True
         continue
     else: 
         writer = Turtle()

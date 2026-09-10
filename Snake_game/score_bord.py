@@ -1,5 +1,4 @@
 from turtle import Turtle
-import time
 
 class Score_Board(Turtle):
     def __init__(self, shape = "classic", undobuffersize = 1000, visible = True):
@@ -13,8 +12,8 @@ class Score_Board(Turtle):
         self.highscore = self.get_high_score()
 
     def get_high_score(self):
-        with open("high_score.txt") as file:
-            return int(file.read())
+            with open("high_score.txt") as file:
+                return int(file.read())
 
     def save_high_score(self):
         if self.score > self.highscore:
