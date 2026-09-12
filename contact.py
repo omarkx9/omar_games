@@ -1,8 +1,4 @@
-
-import os
-import time
-import string
-
+import os,time,string
 
 OPTIONS = """
 ╔══════════════════════════════════════════════╗
