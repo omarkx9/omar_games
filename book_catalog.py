@@ -1,10 +1,41 @@
 import os
+import time
 
 def clear():
     os.system("cls" if os.name == "nt" else "clear")
 
 def co():
     input("🔥 Press Enter To Continue: ")
+
+def rating():
+    while True:
+        clear()
+        print("⭐🔥 Now Evaluate Our App: ")
+        evalution = input("⭐🔥 Rating us Now! (0-5) ")
+        if evalution.isdigit():
+            evalution = int(evalution)
+            if evalution > -1 and evalution < 6:
+                break
+            else:
+                print("Invalid choice enter a number between (0-5)")
+                time.sleep(0.7)
+        else:
+            print("Invalid choice enter a number")
+            time.sleep(0.7)
+    os.system("cls" if os.name == "nt" else "clear")
+    match evalution:
+        case 0:
+            print("🙅‍♂️🙅‍♂️👎👎")
+        case 1:
+            print("😭😩😭😩😢")
+        case 2:
+            print("🙄😒")
+        case 3:
+            print("🤨😑🫥")
+        case 4:
+            print("😌😌🤭😝")
+        case 5:
+            print("🫡🙂‍↕️👌👍🙆‍♂️😃😂😇☺️🤣😆😁😃")
 
 books = {}
 
@@ -190,46 +221,6 @@ while True:
         print("❌🔢 Invalid Choice. Please Enter A Number")
         co()
 
-
-clear()
-
-while True:
-    clear()
-    print("⭐🔥 Now Evaluate Our App: ")
-
-    evalute = input("⭐🔥 Enter Your Evaluation (1-5): ").strip()
-
-    if evalute.isdigit():
-        evalute = int(evalute)
-
-        if evalute < 6 and evalute > 0:
-
-            if evalute == 1:
-                print("😵😢😢😢😢😳")
-                break
-
-            elif evalute == 2:
-                print("🥺🥺🥺🥺🥺🥺🥺")
-                break
-
-            elif evalute == 3:
-                print("🤔🤔🤔🤔")
-                break
-
-            elif evalute == 4:
-                print("🫡 👌👌👌")
-                break
-
-            else:
-                print("🤩🤩🤩😲🫡 🤩👍👌")
-                break
-
-        else:
-            print("❌🔥 OHHHHHHHHHHHHHHHHHHHH Just (1-5)")
-            co()
-
-    else:
-        print("❌💀 OH NOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO....Numberrrrrrrrrrrrrrrrrrrrrrrrrrr")
-        co()
+rating()
 
 print("👋🔥 Now I Have To Say GOOOODBye. I Will Miss You 😭😭😭")
