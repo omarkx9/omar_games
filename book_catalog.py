@@ -223,4 +223,6 @@ while True:
 
 rating()
 
+time.sleep(1)
+
 print("👋🔥 Now I Have To Say GOOOODBye. I Will Miss You 😭😭😭")
